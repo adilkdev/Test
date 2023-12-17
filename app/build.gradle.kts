@@ -67,6 +67,10 @@ dependencies {
     implementation("androidx.room:room-ktx:${roomVersion}")
     kapt("androidx.room:room-compiler:${roomVersion}")
 
+    // mockito
+    testImplementation("org.mockito:mockito-core: 4.0.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
+    testImplementation("org.mockito:mockito-inline:3.11.2")
 
     // testing
     testImplementation("junit:junit:4.13.2")
