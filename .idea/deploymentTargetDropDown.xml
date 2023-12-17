@@ -5,10 +5,13 @@
       <entry key="app">
         <State />
       </entry>
-      <entry key="deleteQuote_expected_emptyQuotes()">
+      <entry key="get_message()">
         <State />
       </entry>
-      <entry key="insert_quote_expected_successful_insertion()">
+      <entry key="get_message_on_main()">
+        <State />
+      </entry>
+      <entry key="get_user()">
         <State />
       </entry>
     </value>
