@@ -5,6 +5,12 @@
       <entry key="app">
         <State />
       </entry>
+      <entry key="deleteQuote_expected_emptyQuotes()">
+        <State />
+      </entry>
+      <entry key="insert_quote_expected_successful_insertion()">
+        <State />
+      </entry>
     </value>
   </component>
 </project>
