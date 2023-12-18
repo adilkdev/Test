@@ -1,5 +1,6 @@
-package com.app.test
+package com.app.test.testing
 
+import com.app.test.MainCoroutineRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert

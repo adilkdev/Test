@@ -1,4 +1,4 @@
-package com.app.test
+package com.app.test.testing
 
 class Utils {
 
@@ -8,7 +8,7 @@ class Utils {
         while(i < j) {
             if (input[i++] != input[j--]) return false
         }
-        return true;
+        return true
     }
 
     fun divide(op1: Int, op2: Int)  = op1 / op2

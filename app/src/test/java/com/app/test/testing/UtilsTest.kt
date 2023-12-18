@@ -1,4 +1,4 @@
-package com.app.test
+package com.app.test.testing
 
 import org.junit.Assert.*
 import org.junit.Test

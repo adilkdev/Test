@@ -1,5 +1,6 @@
 package com.app.test
 
+import com.app.test.testing.Utils
 import org.junit.Test
 import org.junit.Assert.*
 import org.junit.runner.RunWith
