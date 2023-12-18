@@ -8,7 +8,7 @@ import com.app.test.store.NetworkResult
 import com.app.test.store.ProductRepository
 
 class MainActivity : ComponentActivity() {
-    lateinit var viewModel: ViewModel
+    private lateinit var viewModel: ViewModel
     lateinit var productRepository: ProductRepository
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

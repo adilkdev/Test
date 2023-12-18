@@ -48,6 +48,15 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    // to share the common code
+    sourceSets {
+        getByName("androidTest") {
+            java.srcDirs("src/sharedTest/java")
+        }
+        getByName("test") {
+            java.srcDirs("src/sharedTest/java")
+        }
+    }
 }
 
 dependencies {
