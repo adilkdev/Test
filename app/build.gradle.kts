@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -15,7 +16,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.app.test.CustomRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -48,15 +49,6 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    // to share the common code
-    sourceSets {
-        getByName("androidTest") {
-            java.srcDirs("src/sharedTest/java")
-        }
-        getByName("test") {
-            java.srcDirs("src/sharedTest/java")
-        }
-    }
 }
 
 dependencies {
@@ -71,6 +63,12 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+
+    // hilt
+    implementation("com.google.dagger:hilt-android:2.49")
+    kapt("com.google.dagger:hilt-android-compiler:2.49")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.49")
+    kaptAndroidTest("com.google.dagger:hilt-compiler:2.49")
 
     // room db
     val roomVersion = "2.6.1"

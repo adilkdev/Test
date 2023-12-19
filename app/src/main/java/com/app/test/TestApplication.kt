@@ -3,9 +3,11 @@ package com.app.test
 import android.app.Application
 import com.app.test.store.ProductAPI
 import com.app.test.store.ProductRepository
+import dagger.hilt.android.HiltAndroidApp
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+@HiltAndroidApp
 class TestApplication: Application() {
 
     lateinit var productAPI: ProductAPI

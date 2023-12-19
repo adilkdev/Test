@@ -1,30 +1,37 @@
 package com.app.test.db
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.room.Room
-import androidx.test.core.app.ApplicationProvider
 import com.app.test.getOrAwaitValue
+import dagger.hilt.android.testing.HiltAndroidRule
+import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.test.runTest
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.Assert.*
 import org.junit.Rule
+import javax.inject.Inject
 
+@HiltAndroidTest
 class QuotesDaoTest {
 
     @get:Rule
     val instantExecutorRule = InstantTaskExecutorRule()
 
-    private lateinit var quoteDatabase: QuoteDatabase
+    @get:Rule
+    val hiltAndroidRule = HiltAndroidRule(this)
+
+    @Inject
+    lateinit var quoteDatabase: QuoteDatabase
     private lateinit var quoteDao: QuoteDao
 
     @Before
     fun setup() {
-        quoteDatabase = Room.inMemoryDatabaseBuilder(
-            ApplicationProvider.getApplicationContext(),
-            QuoteDatabase::class.java
-        ).allowMainThreadQueries().build()
+//        quoteDatabase = Room.inMemoryDatabaseBuilder(
+//            ApplicationProvider.getApplicationContext(),
+//            QuoteDatabase::class.java
+//        ).allowMainThreadQueries().build()
+        hiltAndroidRule.inject()
         quoteDao = quoteDatabase.quoteDao()
     }
 
